@@ -1,0 +1,55 @@
+Cloudflare Tri-Net Detection (cf_tri_net_detect)
+Copyright 2026 The Project Authors
+
+This product includes software derived from the following third-party components.
+
+============================================================================
+1. oneclickvirt/backtrace  (Apache License 2.0)
+----------------------------------------------------------------------------
+Portions of cf_tri_net_detect.py — specifically the IPv4→ASN prefix table,
+the ASN→line M-table, and the return-route classification logic — are a
+verbatim port (translated from Go to Python) of:
+
+    bk/ipv4_asn.go
+    bk/model/model.go        (M table)
+    bk/route_classification.go
+
+These portions were MODIFIED (translated from Go to Python) by the project
+authors. They enable the precise identification of China-backbone lines such
+as China Unicom 9929/4837, China Telecom CN2/163/CTGNET, and China Mobile
+CMIN2/CMI/CMNET.
+
+  Source:  https://github.com/oneclickvirt/backtrace
+  License: Apache License, Version 2.0
+           (see the LICENSE file in this directory)
+
+============================================================================
+2. oneclickvirt/iptest  (Apache License 2.0 — per oneclickvirt org convention;
+   please verify against upstream before redistribution)
+----------------------------------------------------------------------------
+The bundled `iptest.exe` binary is invoked as an external process for
+download-speed measurement. Its source is NOT included in this repository.
+
+  Source:  https://github.com/oneclickvirt/iptest
+  License: Apache License, Version 2.0 (verify upstream)
+
+============================================================================
+3. MaxMind GeoLite2 Databases  (Creative Commons Attribution-ShareAlike 4.0)
+----------------------------------------------------------------------------
+The GeoLite2-ASN.mmdb and GeoLite2-Country.mmdb database files are bundled
+for offline ASN / country lookups.
+
+  Source:  https://www.maxmind.com
+  License: CC BY-SA 4.0
+           https://creativecommons.org/licenses/by-sa/4.0/
+
+  Attribution:
+  "This product includes GeoLite2 data created by MaxMind,
+   available from https://www.maxmind.com."
+
+============================================================================
+
+This NOTICE file is provided in accordance with Section 4(d) of the Apache
+License, Version 2.0. The presence of this NOTICE does not modify the License.
+You may add your own attribution notices alongside this file when distributing
+modified versions of this project.

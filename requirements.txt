@@ -1,3 +1,14 @@
-flask>=2.3.0
-flask-socketio>=5.3.0
-psutil>=5.8.0
+# Cloudflare 三网检测脚本 (cf_tri_net_detect) 运行依赖
+#
+# 主依赖：MaxMind GeoLite2 离线 ASN/国家库读取。
+#   缺失时脚本会自动降级（仅影响 ASN 精确分类，其余功能正常）。
+maxminddb>=3.0.0
+
+# ---------------------------------------------------------------
+# 以下为「外部二进制 / 数据依赖」，非 pip 安装，需手动放置于脚本同目录：
+#
+#   iptest.exe          oneclickvirt/iptest —— 下载速度实测（外部二进制，subprocess 调用）
+#   tracert/traceroute  操作系统自带        —— 路由追踪（Windows=PowerShell tracert / Linux= traceroute）
+#   GeoLite2-ASN.mmdb   MaxMind GeoLite2 (CC BY-SA 4.0) —— ASN 库
+#   GeoLite2-Country.mmdb MaxMind GeoLite2 (CC BY-SA 4.0) —— 国家库
+# ---------------------------------------------------------------
